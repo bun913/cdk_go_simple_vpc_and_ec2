@@ -1,8 +1,8 @@
 # Welcome to your CDK Go project!
 
-This is a blank project for CDK development with Go.
+以下の構成を作るだけのプロジェクト
 
-The `cdk.json` file tells the CDK toolkit how to execute your app.
+![image](./20230402_cdk_go_vpc_and_ec2_architecture.png)
 
 ## Useful commands
 
