@@ -18,7 +18,7 @@ func NewServer(scope constructs.Construct, vpc awsec2.Vpc) Server {
 	}
 }
 
-func CreateServerResources(sr Server) {
+func (sr Server) CreateServerResources() {
 	awsec2.NewInstance(sr.scope, jsii.String("Server"), &awsec2.InstanceProps{
 		InstanceType: awsec2.InstanceType_Of(awsec2.InstanceClass_T3, awsec2.InstanceSize_MICRO),
 		MachineImage: awsec2.MachineImage_LatestAmazonLinux(&awsec2.AmazonLinuxImageProps{

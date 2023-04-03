@@ -22,7 +22,7 @@ func NewNetwork(scope constructs.Construct, vpcName string, cidr string, hasSSME
 	}
 }
 
-func CreateNetworkResources(nr Network) awsec2.Vpc {
+func (nr Network) CreateNetworkResources() awsec2.Vpc {
 	// VPC
 	vpc := awsec2.NewVpc(nr.scope, &nr.vpcName, &awsec2.VpcProps{
 		IpAddresses:        awsec2.IpAddresses_Cidr(jsii.String(nr.cidr)),

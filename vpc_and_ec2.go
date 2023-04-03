@@ -37,10 +37,10 @@ func main() {
 	})
 
 	sharedNetwork := network.NewNetwork(stack, "SharedVpc", "10.10.0.0/16", true)
-	sharedVpc := network.CreateNetworkResources(sharedNetwork)
+	sharedVpc := sharedNetwork.CreateNetworkResources()
 
-	sever := server.NewServer(stack, sharedVpc)
-	server.CreateServerResources(sever)
+	severResource := server.NewServer(stack, sharedVpc)
+	severResource.CreateServerResources()
 
 	app.Synth(nil)
 }
